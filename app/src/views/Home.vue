@@ -23,6 +23,7 @@
 </template>
 
 <script>
+import decision from './../core/decision'
 export default {
   name: 'Home',
 
