@@ -1,10 +1,10 @@
 ## Readme
 
-This is the project Mahmut Akyol for Data Mining Lesson!
+This is the project for Data Mining Lesson created by Mahmut Akyol!
 
 ### Database
 
-I used prepeared DB from `https://archive.ics.uci.edu/ml/index.php` diabet database;
+I used prepeared DB from [UCI](https://archive.ics.uci.edu/ml/datasets/Early+stage+diabetes+risk+prediction+dataset.) diabet database;
 
 
 ### Frontend
