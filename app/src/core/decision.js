@@ -2,9 +2,53 @@ import questions from './questions'
 
 export default {
 
-  question_logic: {
+  tmp_question_map: null,
+  question_map: {
     'POLIURI': {
-      'YES': {},
+      'YES': {
+        'YAS': {
+          '71 < YAS': {
+            'ANI_KILO_KAYBI': {
+              'YES': {
+                positive: 4,
+                negative: 0
+              },
+              'NO': {
+                positive: 0,
+                negative: 6
+              }
+            }
+          },
+          '71 > YAS': {
+            'POLIDIPSI': {
+              'YES': {
+                positive: 191,
+                negative: 0
+              },
+              'NO': {
+                'OBEZITE': {
+                  'YES': {
+                    'IYILESME_GECIKMESI': {
+                      'YES': {
+                        positive: 1,
+                        negative: 8
+                      },
+                      'NO': {
+                        positive: 7,
+                        negative: 0
+                      }
+                    }
+                  },
+                  'NO': {
+                    positive: 40,
+                    negative: 1
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
       'NO': {
         'POLIDIPSI': {
           'YES': {
@@ -129,23 +173,60 @@ export default {
     }
   },
 
+  current_question: {
+    question: 'POLIURI',
+    question_title: questions.questions.find(q => q.code === 'POLIURI').title,
+    answers: [
+      'YES',
+      'NO'
+    ]
+  },
+
   setAnswer (incoming) {
     this.incomings[incoming.question](incoming.answer)
   },
 
-  calculatePoliuriAnswer (answwer) {
-    if (answer === 'YES') {
-
+  getNextQuestion (incoming) {
+    if (!this.tmp_question_map) {
+      this.tmp_question_map = this.question_map[incoming.question][incoming.answer]
+    } else {
+      this.tmp_question_map = this.tmp_question_map[incoming.question][incoming.answer]
     }
+
+    if (Object.keys(this.tmp_question_map)[0] === 'positive' && Object.keys(this.tmp_question_map)[1] === 'negative') {
+      let res = this.calculateResponse(this.tmp_question_map)
+      return res
+    }
+
+    let tmp_question = {
+      question: Object.keys(this.tmp_question_map)[0],
+      answers: Object.keys(Object.values(this.tmp_question_map)[0]),
+      question_title: questions.questions.find(q => q.code === Object.keys(this.tmp_question_map)[0]).title
+    }
+    return tmp_question
   },
 
-  calculateYasAnwser (answer) {
-    if (answer === 'YES') {
+  calculateResponse (counts) {
+    let total = counts.positive + counts.negative
+    let positive_count = counts.positive
+    let negative_count = counts.negative
+    let negativePercentage = ((negative_count * 100) / total).toFixed(2)
+    let positivePercentage = ((positive_count * 100) / total).toFixed(2)
 
+    return {
+      positivePercentage,
+      negativePercentage,
+      positive_count,
+      negative_count
     }
   },
 
   getQuestion () {
+    return this.current_question
+  },
 
+  refresh () {
+    this.tmp_question_map = null
+    return this.current_question
   }
 }

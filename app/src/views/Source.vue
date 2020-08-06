@@ -116,10 +116,6 @@ export default {
       ],
       items: source.items
     }
-  },
-
-  mounted () {
-    console.log(source)
   }
 }
 </script>

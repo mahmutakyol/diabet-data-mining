@@ -18,13 +18,6 @@ export default {
     return {
       data: null
     }
-  },
-
-  mounted () {
-    console.log('mounted')
-  },
-
-  methods: {
   }
 }
 </script>

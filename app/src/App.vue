@@ -7,9 +7,6 @@
           <router-link to="/">HTS Ekranı</router-link>
         </b-nav-item>
         <b-nav-item href="#">
-          <router-link to="/student">Öğrenci Profili</router-link>
-        </b-nav-item>
-        <b-nav-item href="#">
           <router-link to="/source">Kaynak Veri Seti</router-link>
         </b-nav-item>
       </b-navbar-nav>

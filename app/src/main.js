@@ -6,7 +6,6 @@ import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 
 import App from './App.vue'
 import Home from './views/Home.vue'
-import Student from './views/Student.vue'
 import Source from './views/Source.vue'
 
 Vue.use(VueRouter)
@@ -14,7 +13,6 @@ Vue.use(VueRouter)
 const router = new VueRouter({
   routes: [
     { path: '/', component: Home },
-    { path: '/student', component: Student },
     { path: '/source', component: Source }
   ]
 })
