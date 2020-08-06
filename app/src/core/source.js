@@ -1,5 +1,5 @@
 module.exports = {
-  source: [
+  items: [
     {
       yas: '40',
       cinsiyet: 'Male',
