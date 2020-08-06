@@ -1,5 +1,5 @@
-export default {
-  [
+module.exports = {
+  questions: [
     {
       title: 'Kaç yaşındasınız?',
       code: 'YAS',
@@ -14,7 +14,7 @@ export default {
     },
     {
       title: 'Poliüri rahatsızlığınız var mı? / oldu mu?',
-      code: 'POLIURU',
+      code: 'POLIURI',
       created_at: new Date(),
       updated_at: new Date()
     },

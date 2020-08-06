@@ -23,7 +23,6 @@
 </template>
 
 <script>
-import rest from '@/core/rest'
 export default {
   name: 'Home',
 
