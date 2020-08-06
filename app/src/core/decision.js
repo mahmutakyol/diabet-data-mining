@@ -5,15 +5,15 @@ export default {
   tmp_question_map: null,
   question_map: {
     'POLIURI': {
-      'YES': {
+      'EVET': {
         'YAS': {
           '71 < YAS': {
             'ANI_KILO_KAYBI': {
-              'YES': {
+              'EVET': {
                 positive: 4,
                 negative: 0
               },
-              'NO': {
+              'HAYIR': {
                 positive: 0,
                 negative: 6
               }
@@ -21,25 +21,25 @@ export default {
           },
           '71 > YAS': {
             'POLIDIPSI': {
-              'YES': {
+              'EVET': {
                 positive: 191,
                 negative: 0
               },
-              'NO': {
+              'HAYIR': {
                 'OBEZITE': {
-                  'YES': {
+                  'EVET': {
                     'IYILESME_GECIKMESI': {
-                      'YES': {
+                      'EVET': {
                         positive: 1,
                         negative: 8
                       },
-                      'NO': {
+                      'HAYIR': {
                         positive: 7,
                         negative: 0
                       }
                     }
                   },
-                  'NO': {
+                  'HAYIR': {
                     positive: 40,
                     negative: 1
                   }
@@ -49,52 +49,52 @@ export default {
           }
         }
       },
-      'NO': {
+      'HAYIR': {
         'POLIDIPSI': {
-          'YES': {
+          'EVET': {
             'ASABILIK': {
-              'YES': {
+              'EVET': {
                 positive: 18,
                 negative: 0
               },
-              'NO': {
+              'HAYIR': {
                 'KASINTI': {
-                  'YES': {
+                  'EVET': {
                     'CINSIYET': {
-                      'MALE': {
+                      'ERKEK': {
                         'SAC_DOKUMLESI': {
-                          'YES': {
+                          'EVET': {
                             positive: 4,
                             negative: 1
                           },
-                          'NO': {
+                          'HAYIR': {
                             positive: 0,
                             negative: 7
                           }
                         }
                       },
-                      'FEMALE': {
+                      'KADIN': {
                         positive: 4,
                         negative: 0
                       }
                     }
                   },
-                  'NO': {}
+                  'HAYIR': {}
                 }
               }
             }
           },
-          'NO': {
+          'HAYIR': {
             'CINSIYET': {
-              'MALE': {
+              'ERKEK': {
                 'ASABILIK': {
-                  'YES': {
+                  'EVET': {
                     'GENITAL_PAMUKCUK': {
-                      'YES': {
+                      'EVET': {
                         positive: 5,
                         negative: 0
                       },
-                      'NO': {
+                      'HAYIR': {
                         'YAS': {
                           '42.5 < YAS': {
                             positive: 0,
@@ -108,15 +108,15 @@ export default {
                       }
                     }
                   },
-                  'NO': {
+                  'HAYIR': {
                     'KISMI_FELC': {
-                      'YES': {
+                      'EVET': {
                         positive: 2,
                         negative: 14
                       },
-                      'NO': {
+                      'HAYIR': {
                         'IYILESME_GECIKMESI': {
-                          'YES': {
+                          'EVET': {
                             'YAS': {
                               '40 < YAS': {
                                 positive: 1,
@@ -128,7 +128,7 @@ export default {
                               }
                             }
                           },
-                          'NO': {
+                          'HAYIR': {
                             positive: 0,
                             negative: 91
                           }
@@ -138,13 +138,13 @@ export default {
                   }
                 }
               },
-              'FEMALE': {
+              'KADIN': {
                 'SAC_DOKULMESI': {
-                  'YES': {
+                  'EVET': {
                     positive: 1,
                     negative: 13
                   },
-                  'NO': {
+                  'HAYIR': {
                     'YAS': {
                       '34.5 < YAS': {
                         positive: 26,
@@ -152,11 +152,11 @@ export default {
                       },
                       '34.5 > YAS': {
                         'GORSEL_BULANIKLIK': {
-                          'NO': {
+                          'HAYIR': {
                             positive: 0,
                             negative: 5
                           },
-                          'YES': {
+                          'EVET': {
                             positive: 5,
                             negative: 0
                           }
@@ -177,8 +177,8 @@ export default {
     question: 'POLIURI',
     question_title: questions.questions.find(q => q.code === 'POLIURI').title,
     answers: [
-      'YES',
-      'NO'
+      'EVET',
+      'HAYIR'
     ]
   },
 
