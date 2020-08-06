@@ -1,0 +1,74 @@
+stages:
+  - test
+  - deploy
+
+# https://about.gitlab.com/2019/07/31/docker-in-docker-with-docker-19-dot-03/
+variables:
+  DOCKER_DRIVER: overlay2
+  DOCKER_TLS_CERTDIR: ""
+
+services:
+  - docker:19.03.0-dind
+
+test-api:
+  stage: test
+  image: node:12
+  # We don't need MySQL as a service because we don't execute tests.
+  # services:
+  #   - name: mysql:latest
+  #     command: ['--default-authentication-plugin=mysql_native_password']
+  tags:
+    - 'docker'
+  only:
+    - production
+    - merge_requests
+  variables:
+    MYSQL_DATABASE: "test_bauexperts"
+    MYSQL_ROOT_PASSWORD: "123456"
+    MYSQL_ALLOW_EMPTY_PASSWORD: "1"
+    MYSQL_HOST: mysql
+  script:
+    - npm i -g eslint # @adonisjs/cli
+    - cd ./api
+    - eslint .
+    # - mv .env.staging .env
+    # - npm install
+    # - export NODE_ENV=staging
+    # - adonis test -> For now, we have to close this :(
+    - cd ./../app
+    - yarn
+    - yarn run lint
+
+# Deploy frontend application to S3 Bucket
+deployS3:
+  stage: deploy
+  image: registry.gitlab.com/bauexperts-bxp/frontend-builder
+  tags:
+    - 'docker'
+  only:
+    - production
+  script:
+    - cd ./app
+    - yarn
+    - yarn run build
+    - cd ./dist
+    - ~/.local/bin/aws s3 sync . s3://bauexperts-app-bucket/ --acl public-read --delete
+
+buildApi:
+  stage: deploy
+  image: docker
+  tags:
+    - 'docker'
+  only:
+    - production
+  script:
+    - apk add --update --no-cache py-pip build-base 
+    - pip install awscli --upgrade --user
+    - ~/.local/bin/aws --version
+    - $(~/.local/bin/aws ecr get-login --no-include-email --region eu-central-1)
+    - cd ./api
+    - docker build -t api .
+    - docker tag api:latest 674447181321.dkr.ecr.eu-central-1.amazonaws.com/api:latest
+    - docker push 674447181321.dkr.ecr.eu-central-1.amazonaws.com/api:latest
+    - ~/.local/bin/aws ecs update-service --cluster api-cluster --service api-service --force-new-deployment
+    - ~/.local/bin/aws ecs update-service --cluster api-cluster --service socket-service --force-new-deployment

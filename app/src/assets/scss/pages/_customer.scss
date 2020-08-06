@@ -1,0 +1,68 @@
+.customer {
+  &__header {
+    margin-bottom: 7rem;
+
+    &__title {
+      color: #767676;
+      font-size: 2.8rem;
+      text-transform: uppercase;
+      font-weight: 400;
+      text-align: center;
+    }
+  }
+
+  &__document-heading {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.9rem;
+    width: 100%;
+
+    .btn {
+      margin-right: 3.9rem;
+    }
+
+    &__title {
+      color: #767676;
+      font-size: 2.6rem;
+      font-weight: 400;
+    }
+  }
+
+  &__content {
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  &__document-box {
+    background: $white;
+    border-radius: .5rem;
+    border: 1px solid #DEDEDE;
+    padding: 1rem;
+    width: 50%;
+  }
+
+  &__document-actions {
+    width: 39rem;
+    margin-left: 7rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    &__buttons {
+      width: 30%;
+      display: flex;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      flex-direction: column;
+      align-items: flex-end;
+      margin-top: .7rem;
+
+      .btn {
+        margin-bottom: 1.6rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+    "welcome": "Welcome!",
+    "success": "Success",
+    "error": "Error",
+    "information": "Information",
+    "warning": "Warning",
+    "This is a test message": "This is a test message",
+
+    "USER_NOT_FOUND": "The user not found",
+    "PAGINATION_VALIDATION_ERROR": "You have to send pagination parameters"
+}

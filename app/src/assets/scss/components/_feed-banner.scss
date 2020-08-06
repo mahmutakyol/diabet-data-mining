@@ -1,0 +1,31 @@
+.feed-banner {
+  background: $white;
+  border-radius: 1rem;
+  display: block;
+  box-shadow: 0 3px 6px rgba($black, .16);
+  overflow: hidden;
+  
+  &__image {
+    width: 100%;
+    height: auto;
+  }
+
+  &__title-box {
+    padding: 2.7rem;
+  }
+
+  &__pre-title {
+    color: #5C5C5C;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  &__title {
+    color: #0069B4;
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-bottom: 0;
+  }
+}

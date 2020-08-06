@@ -1,0 +1,29 @@
+// Tab Section Heading 
+.tab-section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  margin-bottom: 1.8rem;
+
+  @include respond(tab-port) {
+    position: relative;
+  }
+
+  &:not(:first-child) {
+    margin-top: 4rem;
+  }
+  .section-title {
+    @include respond(tab-port) {
+      display: none;
+    }
+  }
+
+  .btn-edit-section {
+    @include respond(tab-port) {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+  }
+}

@@ -1,0 +1,33 @@
+.btn.disabled, .btn:disabled {
+  opacity: .55;
+  cursor: not-allowed !important;
+  pointer-events: visible !important;
+}
+
+.btn.btn-stamp:disabled,
+.btn.btn-stamp.disabled,
+.btn-ms-action:disabled,
+.btn-ms-action.disabled {
+  background: #f1f3f4 !important;
+  color: #969696 !important;
+  border: 1px solid #f1f3f4 !important;
+  opacity: 1 !important;
+}
+
+.btn-modal-primary.disabled, .btn-modal-primary:disabled,
+.btn-modal-secondary.disabled, .btn-modal-secondary:disabled,
+.btn-modal-delete.disabled, .btn-modal-delete:disabled {
+  background: #ccc !important;
+  border-color: #ccc !important;
+  color: $white !important;
+
+  &:hover {
+    color: $white !important;
+  }
+}
+
+.bp-dropdown__body .dropdown-item.disabled {
+  color: #c2c2c2;
+  cursor: not-allowed;
+  pointer-events: visible;
+}

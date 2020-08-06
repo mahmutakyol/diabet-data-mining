@@ -1,0 +1,71 @@
+.profile-box {
+  display: flex;
+  justify-content: center;
+  padding: 3rem 2.5rem 3.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-direction: column;
+
+  &__radial-bar-wrapper {
+    margin-bottom: 1rem;
+
+    .btn-edit-rounded {
+      margin-left: auto;
+      right: -5px;
+      margin-bottom: -8px;
+      position: relative;
+      z-index: 5;
+    }
+  }
+
+  &__radial-bar {
+    width: 13rem;
+    height: 13rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 3;
+    border-radius: 50%;
+    border: 1px solid #c0e5ff;
+    background: $white;
+  }
+
+  &__photo-wrapper {
+    width: 11rem;
+    height: 11rem;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  &__photo {
+    width: 100%;
+    height: auto;
+  }
+
+  &__profile-name {
+    color: #343434;
+    font-size: 1.7rem;
+    font-weight: 500;
+    margin-bottom: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  &__premium-description {
+    color: #9F9F9F;
+    font-size: 1.2rem;
+    width: 100%;
+    text-align: center;
+    line-height: 1;
+  }
+
+  .btn-comment {
+    padding: .8rem;
+    margin-top: 1.4rem;
+  }
+}

@@ -1,0 +1,391 @@
+#partnerschaft{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    @include respond(phone){
+      flex-direction: column;
+    }
+    .selected {
+      position: relative;
+      margin-top: -15px;
+      position: relative;
+      z-index: 5;
+
+      .partnerschaft_box--icon_pro,
+      .partnerschaft_box--icon_starter{
+        fill: #0069B0;
+        transition: all 0.3s ease-in;
+      }
+
+      &:hover {
+        pointer-events: none;
+      }
+
+      .partnerschaft_box--icon{
+          border: 1px solid #0074B7;
+      }
+
+      .partnerschaft_box--content{
+        background-color: #0074B7;
+        box-shadow: 0px 0px 10px 0px #0074B7;
+        border: 1px solid #0074B7;
+      }
+
+      .partnerschaft_box--content_title,
+      .partnerschaft_box--content_subtitle,
+      .partnerschaft_box--content_list{
+        color: #FFFFFF;
+      }
+     
+      .partnerschaft_box--content_list li{
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        @include respond(tab-port){
+          flex-direction: column-reverse;
+          justify-content: center;
+        }
+        p{
+          @include respond(tab-port){
+            text-align:center;
+          }
+        }
+      }
+
+      .partnerschaft_box--content_list--box{
+        border-color: #FFFFFF;
+      }
+
+      .partnerschaft_box--content_list--box svg{
+        width: 8px;
+        height: auto;
+        fill: none;
+        stroke: #FFFFFF;
+        stroke-width: 7.1217;
+        stroke-linecap: round;
+      }
+
+      .partnerschaft_box--content_list--box-orange {
+        border-color: #FFFFFF;
+      }
+
+      .partnerschaft_box--content_list--box-orange svg {
+        height: 10px;
+        fill: #FFFFFF;
+        background: rgba(0, 0, 0, 0);
+      }
+
+      .partnerschaft_box--content_list--box-minus {
+        border-color: #FFFFFF;
+      }
+
+      .partnerschaft_box--content_list--box-minus svg {
+        width: 8px;
+        height: auto;
+        fill: none;
+        stroke: #FFFFFF;
+        stroke-width: 40;
+        stroke-linecap: round;
+      }
+    }
+}
+.partnerschaft {
+
+  &_box {
+    width: 100%;
+    height: auto;
+    position: relative;
+    @include respond(phone){
+      margin-bottom:3rem;
+    }
+
+    &--icon {
+      width: 75px;
+      height: 75px;
+      background-color: #FFFFFF;
+      border: 1px solid #E1E1E1;
+      border-radius: 50px !important;
+      position: absolute;
+      z-index: 999;
+      margin-left: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      @include respond(tab-port){
+        left: 0; 
+        right: 0; 
+        margin-left: auto; 
+        margin-right: auto; 
+      }
+
+      &_pro {
+        width: 3rem;
+        height: auto;
+        fill: #8F8F8F;  
+      }
+
+      &_starter {
+        width: 3rem;
+        height: auto;
+        fill: #8F8F8F; 
+      }
+    }
+
+    &--content {
+      width: 100%;
+      height: auto;
+      background-color: #F6F6F6;
+      border: 1px solid #E1E1E1;
+      border-radius: 10px !important;
+      position: relative;
+      margin-top: 3.5rem;
+      padding-bottom: 15px;
+
+      &_title {
+        position: relative;
+        margin-top: 50px;
+        margin-left: 50px;
+        font-family: "Open Sans", sans-serif;
+        font-weight: 700;
+        font-size: 1.4rem;
+        color: #8F8F8F;
+        @include respond(tab-port){
+          text-align:center;
+          margin-left:0;
+        }
+
+        span{
+          font-style: italic;
+          font-size: 1rem;
+          font-weight: 600; 
+        }
+      }
+      
+      &_subtitle {
+        font-family: "Open Sans", sans-serif;
+        color: #8F8F8F;
+        margin-left: 50px;
+        @include respond(tab-port){
+          margin-left:0;
+        }
+
+        h3 {
+          margin-bottom: 0;
+          font-weight: 600;
+          font-size: 1.2rem; 
+          @include respond(tab-port){
+            text-align:center;
+          }
+        }
+
+        h4 {
+          margin: 0;
+          font-weight: 400;
+          font-size: 1rem;
+          font-style: italic;margin: 0;
+          font-weight: 400;
+          font-size: 1rem;
+          font-style: italic;
+          @include respond(tab-port){
+            text-align:center;
+          }
+        }
+      }
+
+      &_list {
+        margin: 2rem 0 0 4.8rem;
+        padding: 0;
+        font-family: "Open Sans", sans-serif;
+        font-size: 14.4px !important;
+        color: #8F8F8F;
+        @include respond(tab-port){
+          margin:15px 25px 0px;
+        }
+
+        li{
+          list-style: none;
+          display: flex;
+          align-items: center;
+          flex-direction: row;
+          padding-bottom: .7rem;
+          @include respond(tab-port){
+            flex-direction: column-reverse;
+            justify-content: center;
+          }
+          p{
+            margin-bottom:0;
+            line-height: 1.3;
+            font-size: 1.3rem;
+            @include respond(tab-port){
+              text-align:center;
+            }
+          }
+        }
+
+        &--box {
+          padding-bottom: 2px;
+          padding-right: 1px;
+          width: 15px;
+          height: 15px;
+          border-radius: 50% !important;
+          border: 2px solid #0069B0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-right: 10px;
+
+          svg {
+            width: 8px;
+            height: auto;
+            fill: none;
+            stroke: #424F54;
+            stroke-width: 7.1217;
+            stroke-linecap: round;
+          }
+
+          &-orange {
+            width: 15px;
+            height: 15px;
+            border-radius: 50% !important;
+            border: 2px solid #FC9129;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 10px;
+
+            svg {
+              height: 10px;
+              fill: #FC9129;
+              background: rgba(0, 0, 0, 0);
+            }
+          }
+
+          &-minus {
+            padding-bottom: 2px;
+            padding-right: 1px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50% !important;
+            border: 2px solid #FC5074;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 10px;
+
+            svg {
+              width: 8px;
+              height: auto;
+              stroke: #FC5074;
+              fill: none;
+              stroke: #FC5074;
+              stroke-width: 40;
+              stroke-linecap: round;  
+            }
+          }
+        }
+      }
+    }
+  }
+  &_boxNo {
+
+    &:hover {
+      margin-top: -15px;
+      position: relative;
+      transition: all 0.3s ease-in;
+
+      .partnerschaft_box--icon{
+        border-color: #0074B7;
+        transition: all 0.3s ease-in;
+      }
+      .partnerschaft_box--icon_pro,
+      .partnerschaft_box--icon_starter{
+        fill: #0069B0;
+        transition: all 0.3s ease-in;
+      }
+
+      .partnerschaft_box--content{
+        background-color: #0074B7;
+        background-color: #0074B7;
+        box-shadow: 0px 0px 10px 0px #0074B7;
+        border: 1px solid #0074B7;
+        position: relative;
+        z-index: 1;
+        transition: all 0.3s ease-in;
+      }
+      .partnerschaft_box--content_title,
+      .partnerschaft_box--content_subtitle,
+      .partnerschaft_box--content_list{
+        color: #FFFFFF;
+        transition: all 0.3s ease-in;
+      }
+
+      .partnerschaft_box--content_list {
+
+        li{
+          display: flex;
+          align-items: center;
+          flex-direction: row;  
+        }
+
+        &--box {
+          border-color: #FFFFFF;
+          transition: all 0.3s ease-in;
+
+          svg {
+            width: 8px;
+            height: auto;
+            fill: none;
+            stroke: #FFFFFF;
+            stroke-width: 7.1217;
+            stroke-linecap: round; 
+          }
+
+          &-orange {
+            border-color: #FFFFFF;
+            transition: all 0.3s ease-in; 
+
+            svg {
+              height: 10px;
+              fill: #FFFFFF;
+              background: rgba(0, 0, 0, 0); 
+            }
+          }
+
+          &-minus {
+            border-color: #FFFFFF;
+            transition: all 0.3s ease-in;
+
+            svg {
+              width: 8px;
+              height: auto;
+              fill: none;
+              stroke: #FFFFFF;
+              stroke-width: 40;
+              stroke-linecap: round;
+            }
+          }
+        }
+      }
+
+    }
+  }
+}
+
+.progress-bar-basic.partnerschaft-progress-bar {
+  margin-bottom: 2rem!important;
+}
+
+.modal-partnerschaft {
+  .modal-body {
+    padding: 1rem 3.4rem !important;
+  }
+}
+.partnerschaft-control-label{
+  font-size:1.7rem;
+  font-weight:400!important;
+  margin-bottom: 2rem;
+}
+

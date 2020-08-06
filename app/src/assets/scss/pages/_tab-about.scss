@@ -1,0 +1,176 @@
+// Front
+.user-card {
+  display: flex;
+  flex-wrap: wrap;
+
+  &__about {
+    width: calc(100% - 14rem);
+
+    @include respond(small-desktop) {
+      width: calc(100% - 12rem);
+    }
+
+    @include respond(tab-land) {
+      width: calc(100% - 10rem);
+    }
+
+    @include respond(phone) {
+      width: 100%;
+    }
+  }
+}
+.avatar-frame {
+  border: 2px solid $white;
+  width: 14rem;
+  height: 14rem;
+  position: relative;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 0 1px #707070;
+
+  @include respond(small-desktop) {
+    width: 12rem;
+    height: 12rem;
+  }
+
+  @include respond(tab-land) {
+    width: 10rem;
+    height: 10rem;
+  }
+
+  @include respond(phone) {
+    margin: 0 auto;
+    margin-bottom: 2rem;
+  }
+
+  &-edit::after {
+    content: "+";
+    position: absolute;
+    line-height: 1;
+    background: #05C640;
+    z-index: 2;
+    left: 10rem;
+    top: 0;
+    color: $white;
+    font-size: 26px;
+    border-radius: 50%;
+    width: 3.5rem;
+    height: 3.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include boxShadow;
+
+    @include respond(small-desktop) {
+      top: 0;
+      left: 9rem;
+      width: 3rem;
+      height: 3rem;
+    }
+
+    @include respond(tab-land) {
+      left: 7.5rem;
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+  }
+
+  &-edit {
+    position: relative;
+  }
+
+  &-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 14rem;
+  
+    @include respond(small-desktop) {
+      width: 12rem;
+    }
+  
+    @include respond(tab-land) {
+      width: 10rem;
+    }
+  }
+}
+
+.image-frame {
+  width: 10rem;
+  height: 10rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 1px #707070;
+}
+
+.about-info {
+  margin-left: 2rem;
+  
+  @include respond(phone) {
+    margin-left: 0;
+  }
+
+  &__degree {
+    font-size: 1.5rem;
+    color: #848484;
+  }
+
+  &__name {
+    font-size: 2.2rem;
+    color: #747474;
+    font-weight: 400;
+    border-bottom: 1px solid #E8E8E8;
+    padding-bottom: 1.2rem;
+    margin-bottom: 2rem;
+
+    @include respond(tab-land) {
+      font-size: 1.8rem;
+      padding-bottom: .8rem;
+      margin-bottom: 1.4rem;
+    }
+  }
+
+  &__description {
+    font-size: 1.4rem;
+    color: #505050;
+    line-height: 1.7;
+
+    @include respond(phone) {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+// Edit
+
+.about-form-container {
+  width: 74%;
+
+  @include respond(small-desktop) {
+    width: 72%;
+  }
+
+  @include respond(small-phone) {
+    width: 100%;
+  }
+}
+
+.avatar-frame-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 3rem;
+  width: 26%;
+
+  @include respond(small-desktop) {
+    width: 28%;
+    padding: 1.8rem;
+  }
+
+  @include respond(small-phone) {
+    width: 100%;
+  }
+
+  @include respond(tab-land) {
+    padding: 1.4rem;
+  }
+}

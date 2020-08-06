@@ -1,0 +1,65 @@
+.hidden-thead {display: none;}
+.margin-bottom-1-rem {margin-bottom: 1rem;}
+.margin-bottom-2-rem {margin-bottom: 2rem;}
+.margin-bottom-3-rem {margin-bottom: 3rem;}
+.margin-top-1-rem {margin-top: 1rem;}
+.margin-top-2-rem {margin-top: 2rem;}
+.margin-top-3-rem {margin-top: 3rem;}
+.margin-left-1-rem {margin-left: 1rem;}
+.margin-left-2-rem {margin-left: 2rem;}
+.margin-left-3-rem {margin-left: 3rem;}
+.margin-right-1-rem {margin-right: 1rem;}
+.margin-right-2-rem {margin-right: 2rem;}
+.margin-right-3-rem {margin-right: 3rem;}
+.full-width {width: 100%;}
+.flex-grow {flex-grow: 1;}
+.overdue {color: $red;}
+
+.padding-top-0 {padding-top: 0 !important;}
+.padding-right-0 {padding-right: 0 !important;}
+.padding-bottom-0 {padding-bottom: 0 !important;}
+.padding-left-0 {padding-left: 0 !important;}
+
+.bold {font-weight: 500 !important;}
+
+.hide-on-desktop {
+  @include respond(desktop) {
+    display: none !important;
+  }
+}
+
+.hide-on-sm-desktop {
+  @include respond(small-desktop) {
+    display: none !important;
+  }
+}
+
+.hide-on-tab-land {
+  @include respond(tab-land) {
+    display: none !important;
+  }
+}
+
+.hide-on-tab-port {
+  @include respond(tab-port) {
+    display: none !important;
+  }
+}
+
+.hide-on-sm-tab-port {
+  @include respond(small-tab-port) {
+    display: none !important;
+  }
+}
+
+.hide-on-phone {
+  @include respond(phone) {
+    display: none !important;
+  }
+}
+
+.hide-on-sm-phone {
+  @include respond(small-phone) {
+    display: none !important;
+  }
+}

@@ -1,0 +1,112 @@
+html {
+  font-size: 62.5%;
+
+  /*@include respond(small-desktop) {
+    font-size: 56.25%;
+  }
+
+  @include respond(tab-land) {
+    font-size: 50%;
+  }
+
+  @include respond(tab-port) {
+    font-size: 43.75%;
+  }*/
+}
+
+body {
+  background-color: #F9F9F9;
+}
+
+:focus {
+  outline: none;
+}
+
+.pac-container {
+  z-index: 1200 ; /* needs to be > z-index modal */
+}
+
+#content {
+  /*margin-left: calc(#{$sidebar-width} - #{$sidebar-collapsed-width});*/
+  margin-left: $sidebar-width;
+  transition: margin-left $sidebar-transition-time;
+  padding: 0 3rem;
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+
+  @include respond(tab-land) {
+    margin-right: -$sidebar-width;
+  }
+
+  @include respond(small-tab-port) {
+    padding: 0 1rem;
+  }
+
+  @include respond(phone) {
+    padding: 0 .5rem;
+  }
+
+  &.active {
+    margin-left: $sidebar-collapsed-width;
+
+    @include respond(tab-land) {
+      margin-right: 0;
+    }
+
+    @include respond(phone) {
+      margin-left: 0;
+    }
+  }
+}
+
+#page-content {
+  padding: 6rem 0;
+  padding-top: 10rem;
+
+  @include respond(small-tab-port) {
+    padding-top: 9rem;
+  }
+
+  @include respond(phone) {
+    padding: 9rem 0;
+  }
+}
+
+::selection {
+  background-color: #00c3f5;
+  color: $white;
+}
+
+svg > svg, svg, svg svg {
+  pointer-events: none;
+}
+
+.no-wrap {
+  word-wrap: break-word;
+  white-space: nowrap;
+}
+
+/* Some BS overrides */
+
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col, .col-auto, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm, .col-sm-auto, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-md, .col-md-auto, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg, .col-lg-auto, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl, .col-xl-auto {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* Zendesk Chat Disabled for phone */
+
+@include respond(phone) {
+  .zEWidget-launcher {
+    display: none !important;
+  }
+}
+
+.text-line-through {
+  text-decoration: line-through;
+}

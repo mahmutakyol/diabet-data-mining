@@ -1,0 +1,92 @@
+.contact-selectbox {
+  background-color: $white;
+  position: absolute;
+  border-radius: 0;
+  outline: 1px solid #D8D8D8;
+  padding: 1rem;
+  z-index: 9;
+  min-width: 25rem;
+  box-shadow: 0px 5px 1.2rem rgba(0, 0, 0, 0.175);
+  color: #636363;
+  margin-top: 1px;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    color: #636363;
+    font-size: 1.5rem;
+    padding: 1.5rem 1rem;
+
+    &:hover {
+      background: #f9f9f9;
+      color: $bxp-blue !important;
+
+      .icon-rounded__icon {
+        fill: $bxp-blue;
+      }
+    }
+
+    &.no-hover:hover {
+      background: transparent;
+      color: #636363 !important;
+    }
+
+    &.add-new {
+      color: $green;
+
+      &:hover {
+        color: $green !important;
+      }
+
+      .icon-rounded__icon {
+        fill: $green;
+      }
+    }
+
+    &.show-all {
+      color: $green;
+
+      &:hover {
+        color: $green !important;
+      }
+
+      .icon-rounded__icon {
+        fill: $green;
+      }      
+    }
+  }
+}
+
+.modal-add-deal .contact-selectbox,
+.modal-new-project .contact-selectbox {
+  width: calc(100% - 3.2rem);
+  left: 1.6rem;
+}
+
+div.contact-selectbox > div.search-results {
+  border-bottom: 1px solid #D8D8D8;
+}
+
+div.contact-selectbox-selection {
+  font-size: 1.6rem;
+  color: #868686;
+  padding: 10px 2rem 5px;
+  background-color: #f4f4f4;
+  outline: 1px solid #D8D8D8;
+  border: none;
+  border-bottom: 3px solid transparent;
+  width: 100%;
+  display: flex;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  line-height: 1.3;
+  min-height: 3.7rem;
+  background-clip: border-box;
+  outline-offset: 0 !important;
+  cursor: pointer;
+  position: relative;
+
+  .side-box__contact-item__icon {
+    margin-right: 1.2rem;
+  }
+}

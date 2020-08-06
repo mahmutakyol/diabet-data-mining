@@ -1,0 +1,83 @@
+// Settings / Sessions
+.primary-email-update {
+  display: flex;
+  padding: 1.6rem;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+// Settings / Privacy
+.privacy-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  &__text {
+    width: 60%;
+
+    @include respond(tab-land) {
+      width: 100%;
+    }
+
+    &.notify-text {
+      width: 50%;
+
+      @include respond (small-desktop){
+        width: 100%;
+      }
+    }
+  }
+
+  &__form {
+    width: 34%;
+    z-index: unset;
+
+    @include respond(tab-land) {
+      width: 100%;
+      margin-top: 2rem;
+    }
+  }
+
+  .form__group--full-width {
+    padding: 0;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 5rem;
+  }
+}
+
+// Settings / Work
+.down-times {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  
+  &__text {
+    width: 72%;
+  }
+
+  &__button {
+    width: 28%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  &__button-status {
+    font-size: 1.6rem;
+    font-style: italic;
+    margin-right: 1.4rem;
+    color: #AAAAAA;
+  }
+}
+
+/* Tax Information */
+.tax-information-addr {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+}

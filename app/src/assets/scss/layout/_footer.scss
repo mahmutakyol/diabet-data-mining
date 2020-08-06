@@ -1,0 +1,57 @@
+.footer-logo {
+  display: flex;
+  flex-grow: 1;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  height: 6.8rem;
+  align-items: center;
+  justify-content: center;
+  margin-top: auto;
+  position: absolute;
+  margin-bottom: 1rem;
+  opacity: .15;
+  @include userSelect;
+
+  @include respond(phone) {
+    bottom: 8rem;
+  }
+
+  &.on-home {
+    width: calc(100% - 26rem);
+
+    @include respond(tab-port) {
+      width: 100%;
+    }
+  }
+
+  &:before {
+    content: " ";
+    width: 50%;
+    height: 1px;
+    position: absolute;
+    background-image: linear-gradient(to left, #56595A, transparent, transparent);
+    left: 2rem;
+    z-index: -1;
+    top: 50%;
+    transform: translateY(4.6px);
+  }
+
+  &:after {
+    content: " ";
+    width: 50%;
+    height: 1px;
+    position: absolute;
+    background-image: linear-gradient(to right, #0074b7, transparent, transparent);
+    right: 2rem;
+    z-index: -1;
+    top: 50%;
+    transform: translateY(-5.5px);
+  }
+
+  &__icon {
+    width: 7rem;
+    height: 7rem;
+    background: #f9f9f9;
+  }
+}
